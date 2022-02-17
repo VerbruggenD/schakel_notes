@@ -1,10 +1,8 @@
-# schakel_notes
+# Software engineering skills
 
-In deze repo vindt u de notities van Dieter Verbruggen terug voor de vakken:
-  - software engineering skills
-  - statistiek
-  - wiskunde 2
-  - chipontwerp
-  - system on chip design
-  - chemie schakel
+Dit is de branch voor software engineering skills.
+Zowel:
+  - praktijk
+  - theorie
 
+Kan ook gebruikt worden om code te delen.
