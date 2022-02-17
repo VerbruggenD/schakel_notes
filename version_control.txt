@@ -1,0 +1,50 @@
+Version control: 
+
+waarom?
+- om meerdere versies lokaal te vermijden
+	-> versie1, versie2, final, final2
+- problemen hard drive -> op het internet (meerdere backups)
+
+Hoe?
+- plain text (code) gaat makkelijk
+	-> op basis van regelnummers
+- word (docx) is eig een binary
+	-> dan kan het niet
+
+oude servers: timestamp met volledige copy (SVN)
+- enkel de nieuwe versie staat lokaal
+- op server staat enkel de algemene
+	-> server in fik, nogaltijd data loss
+- working copy van de server
+
+distributed (git): gemaakt door linus torvalds
+- geen server
+- iedereen heeft copy van bestanden op zen pc
+(inhoud game: level1.cpp, 2.cpp, ...)
+- geen centrale computer
+- bij een git load, wordt alles ingeladen (alle brances en files)
+- heeft geen internet nodig (kan dus in bedrijfsomgeving met hun server)
+
+github specifiek:
+- heeft een server
+- maar is geen master, gwn een git node die identiek is aan de user
+- bovenop nog een UI
+- (server is een mirror)
+extra: - heeft handige features zoals loadbalance etc
+
+demo:
+- aanmaken folder
+- enabled git
+- .git folder automatisch toegevoegd
+
+
+git cmd's:
+- git status
+- git add
+- git commit
+- git push
+- git pull
+
+- git remote add <name> <url>
+
+!! na commit hebt ge een unieke hash, hierbij gaan er conflicten opgelost worden
