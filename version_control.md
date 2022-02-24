@@ -50,3 +50,11 @@
 - git remote add <name> <url>
   
 #### !!! na commit hebt ge een unieke hash, hierbij gaan er conflicten opgelost worden
+
+## Opdracht 1
+git clone repo opdracht 1
+git branch dieter
+git checkout dieter
+
+openen met intellij
+
