@@ -1,0 +1,252 @@
+
+*** Running vivado
+    with args -log toplevel.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source toplevel.tcl
+
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source toplevel.tcl -notrace
+Command: synth_design -top toplevel -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13948
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'toplevel' [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/new/toplevel.vhd:42]
+	Parameter PRESCALER_MAX bound to: 62500 - type: integer 
+INFO: [Synth 8-3491] module 'prescaler' declared at 'C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/imports/new/prescaler.vhd:34' bound to instance 'inst_prescaler_pwm' of component 'prescaler' [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/new/toplevel.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'prescaler' [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/imports/new/prescaler.vhd:45]
+	Parameter PRESCALER_MAX bound to: 62500 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'prescaler' (1#1) [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/imports/new/prescaler.vhd:45]
+	Parameter PRESCALER_MAX bound to: 62500000 - type: integer 
+INFO: [Synth 8-3491] module 'prescaler' declared at 'C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/imports/new/prescaler.vhd:34' bound to instance 'inst_prescaler_state' of component 'prescaler' [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/new/toplevel.vhd:87]
+INFO: [Synth 8-638] synthesizing module 'prescaler__parameterized1' [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/imports/new/prescaler.vhd:45]
+	Parameter PRESCALER_MAX bound to: 62500000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'prescaler__parameterized1' (1#1) [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/imports/new/prescaler.vhd:45]
+INFO: [Synth 8-3491] module 'state_mach' declared at 'C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/new/state_mach.vhd:34' bound to instance 'inst_state_mach' of component 'state_mach' [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/new/toplevel.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'state_mach' [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/new/state_mach.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'state_mach' (2#1) [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/new/state_mach.vhd:43]
+INFO: [Synth 8-3491] module 'PWM' declared at 'C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/new/PWM.vhd:34' bound to instance 'inst_pwm' of component 'pwm' [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/new/toplevel.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'PWM' [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/new/PWM.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'PWM' (3#1) [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/new/PWM.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'toplevel' (4#1) [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/sources_1/imports/sources_1/new/toplevel.vhd:42]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1222.570 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/constrs_1/imports/pynq-z2_v1.0.xdc/PYNQ-Z2 v1.0.xdc]
+Finished Parsing XDC File [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/constrs_1/imports/pynq-z2_v1.0.xdc/PYNQ-Z2 v1.0.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.srcs/constrs_1/imports/pynq-z2_v1.0.xdc/PYNQ-Z2 v1.0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/toplevel_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/toplevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1222.570 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'state_mach'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+             reset_state |                             0000 |                             1100
+                     red |                             0001 |                             0000
+           red75_green25 |                             0010 |                             0011
+           red50_green50 |                             0011 |                             0010
+           red25_green75 |                             0100 |                             0001
+                   green |                             0101 |                             0100
+          green75_blue25 |                             0110 |                             0111
+          green50_blue50 |                             0111 |                             0110
+          green25_blue75 |                             1000 |                             0101
+                    blue |                             1001 |                             1000
+            blue75_red25 |                             1010 |                             1011
+            blue50_red50 |                             1011 |                             1010
+            blue25_red75 |                             1100 |                             1001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'state_mach'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	  13 Input    4 Bit        Muxes := 1     
+	  13 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 5     
+	   4 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1222.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1223.332 ; gain = 0.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1223.332 ; gain = 0.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1223.332 ; gain = 0.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1223.332 ; gain = 0.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1223.332 ; gain = 0.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1223.332 ; gain = 0.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    24|
+|3     |LUT1   |     2|
+|4     |LUT2   |    49|
+|5     |LUT3   |     3|
+|6     |LUT4   |     9|
+|7     |LUT5   |     7|
+|8     |LUT6   |     5|
+|9     |FDRE   |    69|
+|10    |IBUF   |     2|
+|11    |OBUF   |     3|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1223.332 ; gain = 0.762
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1223.332 ; gain = 0.762
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1223.332 ; gain = 0.762
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1235.375 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1248.805 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: c381f418
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1248.805 ; gain = 26.234
+INFO: [Common 17-1381] The checkpoint 'C:/Users/WinSSD/Documents/GitHub/schakel_notes/oef_6_les_2/oef_6_les_2.runs/synth_1/toplevel.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file toplevel_utilization_synth.rpt -pb toplevel_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  2 11:38:31 2022...

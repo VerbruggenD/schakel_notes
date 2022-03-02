@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../oef_6_les_2.srcs/sources_1/new/PWM.vhd" \
+"../../../../oef_6_les_2.srcs/sources_1/imports/sources_1/imports/new/prescaler.vhd" \
+"../../../../oef_6_les_2.srcs/sources_1/new/state_mach.vhd" \
+"../../../../oef_6_les_2.srcs/sources_1/imports/sources_1/new/toplevel.vhd" \
+"../../../../oef_6_les_2.srcs/sim_1/new/toplevel_tb.vhd" \
+
+# Do not sort compile order
+nosort
