@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: UHasselt
+-- Engineer: Dieter Verbruggen
 -- 
 -- Create Date: 19.02.2022 18:00:26
 -- Design Name: 
