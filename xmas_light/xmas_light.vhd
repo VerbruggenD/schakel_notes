@@ -35,7 +35,21 @@ end xmas_light;
 
 architecture Behavioural of xmas_light is
 
+component led_component is
+    Port ( clk_in : in STD_LOGIC;
+           cmd_valid : in STD_LOGIC;
+           cmd : in STD_LOGIC_VECTOR (31 downto 0);
+           led_out : out STD_LOGIC_VECTOR (3 downto 0);
+           reset : in STD_LOGIC);
+end component;
+
 begin
 
+inst_led_comp : led_component
+port map ( clk_in => clock,
+            cmd_valid => command_valid,
+            cmd => command,
+            led_out => LEDs,
+            reset => reset );
 
 end Behavioural;

@@ -33,11 +33,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity led_control is
     Port ( clk_in : in STD_LOGIC;
-           tick_in : in STD_LOGIC;
-           new_cmd : in STD_LOGIC;
            led_cmd : in STD_LOGIC_VECTOR (3 downto 0);
            led_out : out STD_LOGIC;
-           reset : in STD_LOGIC);
+           reset : in STD_LOGIC;
+           freq_1hz : in STD_LOGIC;
+           freq_2hz : in STD_LOGIC;
+           freq_4hz : in STD_LOGIC;
+           freq_8hz : in STD_LOGIC);
 end led_control;
 
 architecture Behavioral of led_control is
@@ -46,69 +48,73 @@ type mystate is (reset_state, read_cmd, led_off, led_on, led_blink);
 signal state, next_state : mystate;
 
 signal blink : std_logic;
-signal freq : std_logic_vector(2 downto 0);
+
+component freq_select is
+    Port ( clk_in : in STD_LOGIC;
+           freq_1hz_in : in STD_LOGIC;
+           freq_2hz_in : in STD_LOGIC;
+           freq_4hz_in : in STD_LOGIC;
+           freq_8hz_in : in STD_LOGIC;
+           freq_cmd : in STD_LOGIC_VECTOR (1 downto 0);
+           freq_out : out STD_LOGIC;
+           reset : in std_logic);
+end component;
 
 begin
 
-state_next : process(state, new_cmd)
+inst_freq_select : freq_select
+port map ( clk_in => clk_in,
+           freq_1hz_in => freq_1hz,
+           freq_2hz_in => freq_2hz,
+           freq_4hz_in => freq_4hz,
+           freq_8hz_in => freq_8hz,
+           freq_cmd => led_cmd(1 downto 0),
+           freq_out => blink,
+           reset => reset);
+
+state_next : process(state, led_cmd)
 begin
     case state is
         when read_cmd =>
-            if new_cmd = '1' then
-                case led_cmd is
-                    when "0000" =>
-                        next_state <= led_off;
-                    when "0001" =>
-                        next_state <= led_on;
-                    when others =>
-                        next_state <= led_blink;
-                end case;
-            else
-                next_state <= read_cmd;
-            end if;
+            case led_cmd is
+                when "0000" =>
+                    next_state <= led_off;
+                when "0001" =>
+                    next_state <= led_on;
+                when others =>
+                    next_state <= led_blink;
+            end case;
         
         when led_off =>
-            if new_cmd = '1' then
-                case led_cmd is
-                    when "0000" =>
-                        next_state <= led_off;
-                    when "0001" =>
-                        next_state <= led_on;
-                    when others =>
-                        next_state <= led_blink;
-                end case;
-            else
-                next_state <= led_off;
-            end if;
+            case led_cmd is
+                when "0000" =>
+                    next_state <= led_off;
+                when "0001" =>
+                    next_state <= led_on;
+                when others =>
+                    next_state <= led_blink;
+            end case;
             
         
         when led_on =>
-            if new_cmd = '1' then
-                case led_cmd is
-                    when "0000" =>
-                        next_state <= led_off;
-                    when "0001" =>
-                        next_state <= led_on;
-                    when others =>
-                        next_state <= led_blink;
-                end case;
-            else
-                next_state <= led_on;
-            end if;
+            case led_cmd is
+                when "0000" =>
+                    next_state <= led_off;
+                when "0001" =>
+                    next_state <= led_on;
+                when others =>
+                    next_state <= led_blink;
+            end case;
         
         when led_blink =>
-            if new_cmd = '1' then
-                case led_cmd is
-                    when "0000" =>
-                        next_state <= led_off;
-                    when "0001" =>
-                        next_state <= led_on;
-                    when others =>
-                        next_state <= led_blink;
-                end case;
-            else
-                next_state <= led_blink;
-            end if;
+            case led_cmd is
+                when "0000" =>
+                    next_state <= led_off;
+                when "0001" =>
+                    next_state <= led_on;
+                when others =>
+                    next_state <= led_blink;
+            end case;
         
         when reset_state =>
             next_state <= read_cmd;
@@ -121,14 +127,12 @@ begin
         if reset = '1' then
             state <= reset_state;
         else
-            if tick_in = '1' then
-                state <= next_state;
-            end if;
+            state <= next_state;
         end if;
     end if;
 end process;
 
-out_process : process(state)
+out_process : process(state, blink)
 begin
     case state is
         when led_off =>
@@ -137,7 +141,6 @@ begin
             led_out <= '1';
         when led_blink =>
             led_out <= blink;
-            freq <= led_cmd(3 downto 1);
         when others =>
             led_out <= '0';
     end case;
