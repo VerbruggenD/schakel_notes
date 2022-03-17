@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Company: UHasselt
+-- Company: UHasselt University
 -- Engineer: Dieter Verbruggen
 -- 
--- Create Date: 10.03.2022 15:51:18
--- Design Name: freq_gen
--- Module Name: freq_gen - Behavioral
--- Project Name: XMas_Lights
+-- Create Date: 17.03.2022 14:36:22
+-- Design Name: PWM
+-- Module Name: PWM - Behavioral
+-- Project Name: XMAS_Light
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 
@@ -32,50 +32,47 @@ use IEEE.std_logic_unsigned.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity freq_gen is
+entity PWM is
     Port ( clk_in : in STD_LOGIC;
-           freq_1hz_out : out STD_LOGIC;
-           freq_2hz_out : out STD_LOGIC;
-           freq_4hz_out : out STD_LOGIC;
-           freq_8hz_out : out STD_LOGIC;
+           tick_in : in STD_LOGIC;
+           duty_in : in STD_LOGIC_VECTOR (3 downto 0);
+           output : out STD_LOGIC;
            reset : in STD_LOGIC);
-end freq_gen;
+end PWM;
 
-architecture Behavioral of freq_gen is
+architecture Behavioral of PWM is
 
-signal tick_s : std_logic;
 signal count : std_logic_vector(3 downto 0);
-
-component prescaler is
-    generic ( divider : integer );
-    Port ( clk_in : in STD_LOGIC;
-           tick : out STD_LOGIC;
-           rst : in std_logic);
-end component;
 
 begin
 
-freq_1hz_out <= count(3);
-freq_2hz_out <= count(2);
-freq_4hz_out <= count(1);
-freq_8hz_out <= count(0);
-
-inst_prescaler_freq_gen : prescaler
-generic map ( divider => 16 )
-port map ( clk_in => clk_in,
-            tick => tick_s,
-            rst => reset );
-            
 process(clk_in)
 begin
     if clk_in'event and clk_in = '1' then
         if reset = '1' then
             count <= "0000";
+            output <= '0';
         else
-            if tick_s = '1' then
+            if tick_in = '1' then
                 count <= count + 1;
             end if;
-        end if;
+            
+            if duty_in = "0000" then
+                output <= '0';
+            else 
+                if duty_in = "1111" then
+                    output <= '1';
+                else 
+                    if count = "0000" then
+                        output <= '1';
+                    else 
+                        if count = duty_in then
+                            output <= '0';
+                        end if;
+                    end if;
+                end if;
+            end if;
+        end if;   
     end if;
 end process;
 

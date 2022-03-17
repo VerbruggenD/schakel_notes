@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: UHasselt
+-- Engineer: Dieter Verbruggen
 -- 
 -- Create Date: 03.03.2022 19:14:47
--- Design Name: 
+-- Design Name: led_select
 -- Module Name: led_select - Behavioral
--- Project Name: 
+-- Project Name: XMas_Light
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 

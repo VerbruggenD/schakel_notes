@@ -43,6 +43,15 @@ component led_component is
            reset : in STD_LOGIC);
 end component;
 
+component RGB_select is
+    Port ( Clk_in : in STD_LOGIC;
+           cmd : in STD_LOGIC_VECTOR (31 downto 0);
+           cmd_valid : in STD_LOGIC;
+           RGB0_out : out STD_LOGIC_VECTOR (2 downto 0);
+           RGB1_out : out STD_LOGIC_VECTOR (2 downto 0);
+           reset : in STD_LOGIC);
+end component;
+
 begin
 
 inst_led_comp : led_component
@@ -50,6 +59,14 @@ port map ( clk_in => clock,
             cmd_valid => command_valid,
             cmd => command,
             led_out => LEDs,
+            reset => reset );
+            
+inst_RGB : RGB_select
+port map ( clk_in => clock,
+            cmd => command,
+            cmd_valid => command_valid,
+            RGB0_out => RGB0,
+            RGB1_out => RGB1,
             reset => reset );
 
 end Behavioural;

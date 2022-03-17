@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: UHasselt
+-- Engineer: Dieter Verbruggen
 -- 
 -- Create Date: 17.02.2022 16:36:12
--- Design Name: 
+-- Design Name: prescaler
 -- Module Name: prescaler - Behavioral
--- Project Name: 
+-- Project Name: XMas_Light
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 
@@ -32,7 +32,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity prescaler is
-    generic ( PRESCALER_MAX : integer );
+    generic ( divider : integer );
     Port ( clk_in : in STD_LOGIC;
            tick : out STD_LOGIC;
            rst : in std_logic);
@@ -40,6 +40,11 @@ end prescaler;
 
 architecture Behavioral of prescaler is
 
+constant PRESCALER_MAX : integer := 125000000/(divider
+    -- synthesis translate_off
+      * 312500
+    -- synthesis translate_on
+);
 signal counter : integer;
 
 begin

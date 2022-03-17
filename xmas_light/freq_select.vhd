@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: UHasselt
+-- Engineer: Dieter Verbruggen
 -- 
 -- Create Date: 10.03.2022 14:49:46
--- Design Name: 
+-- Design Name: freq_select
 -- Module Name: freq_select - Behavioral
--- Project Name: 
+-- Project Name: XMas_Lights
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 
