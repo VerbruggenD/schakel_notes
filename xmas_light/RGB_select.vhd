@@ -75,7 +75,7 @@ RGB0_select_data <= cmd(14 downto 12);
 RGB1_select_data <= cmd(17 downto 15);
 
 inst_prescalerPWM : prescaler
-generic map ( divider => 10 ) -- Door de simulatie factor die groot is, voor project moet die hoger
+generic map ( divider => 10000 ) -- Door de simulatie factor die groot is, voor project moet die hoger
 port map ( Clk_in => Clk_in,
            tick => tick_s,
            rst => reset );
