@@ -1,4 +1,4 @@
-# Hoorcollege 4
+# Hoorcollege 5
 #### Uitbreiding vorige les examenrooster
 Is veilig aanpassen en uitbreiden om ook meerdere dagen tussen de vakken te hebben.
 
